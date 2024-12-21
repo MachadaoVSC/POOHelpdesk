@@ -9,18 +9,22 @@ namespace POOFinal.Models
     public class Solucoes
     {
         public int IdResolucao { get; set; }
-        public string Assunto { get; set; }
         public string DescAssunto { get; set; }
-        public TipoPedido TipoPedido { get; set; }
+        public Categoria CategoriaTipo { get; set; }
+        public SubCategoria SubCategoriaTipo { get; set; }
+        public Produto ProdutoTipo { get; set; }
+        public bool Geral { get; set; }
         public Utilizador Tecnico { get; set; }
 
 
-        public Solucoes(int id, string assunto, string descassunto, TipoPedido tipopedido, Utilizador tecnico)
+        public Solucoes(int id, string descassunto, Categoria categoria, SubCategoria subCategoria, Produto produto, bool geral, Utilizador tecnico)
         {
             IdResolucao = id;
-            Assunto = assunto;
             DescAssunto = descassunto;
-            TipoPedido = tipopedido;
+            CategoriaTipo = categoria;
+            SubCategoriaTipo = subCategoria;
+            ProdutoTipo = produto;
+            Geral = geral;
             Tecnico = tecnico;
         }
     }
